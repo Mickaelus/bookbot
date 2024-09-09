@@ -18,10 +18,9 @@ def get_file_contents(file_path):   #gets the whole book contents
         return f.read()
 
 def get_num_characters(file_contents): #gets a count of each character
-    lowered_file_contents = file_contents.lower()
     characters = {}
-    for character in lowered_file_contents:
-        characters[character] = characters.get(character, 0) + 1
+    for character in file_contents.lower():
+        characters[character] = characters.get(character, 0) + 1 #adds the character to the dictionary if it doesn't already exist, or add one to the count if it does
     return characters
 
 if __name__ == "__main__":
